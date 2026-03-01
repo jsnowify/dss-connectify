@@ -17,7 +17,7 @@ const Notification = () => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>Message Screen</Text>
+      <Text style={styles.text}>Activity Screen</Text>
     </View>
   );
 };
