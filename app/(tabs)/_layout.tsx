@@ -1,63 +1,25 @@
+import { TabBar } from "@/src/components/navigation/TabBar";
 import { Tabs } from "expo-router";
-import { useColorScheme } from "react-native";
-
-import { HomeFilled, HomeOutline } from "@/assets/icons/HomeIcons";
-import { MessageFilled, MessageOutline } from "@/assets/icons/MessageIcon";
-import {
-  NotificationFilled,
-  NotificationOutline,
-} from "@/assets/icons/NotificationIcon";
-import { ProfileFilled, ProfileOutline } from "@/assets/icons/ProfileIcon";
+import { useColorScheme, View } from "react-native";
 
 export default function TabsLayout() {
   const isDark = useColorScheme() === "dark";
 
   return (
-    <Tabs
-      screenOptions={{
-        tabBarShowLabel: false,
-        tabBarActiveTintColor: "#1A1A1A",
-        tabBarInactiveTintColor: "#888",
-        tabBarStyle: {
-          backgroundColor: isDark ? "#1A1A1A" : "#FAFAFA",
-        },
-      }}
-    >
-      <Tabs.Screen
-        name="home"
-        options={{
-          tabBarIcon: ({ focused, color }) =>
-            focused ? (
-              <HomeFilled color={color} />
-            ) : (
-              <HomeOutline color={color} />
-            ),
+    <View style={{ flex: 1 }}>
+      <Tabs
+        screenOptions={{
+          tabBarStyle: { display: "none" },
+          headerStyle: { backgroundColor: isDark ? "#1A1A1A" : "#FAFAFA" },
+          headerTintColor: isDark ? "#FAFAFA" : "#1A1A1A",
         }}
-      />
-
-      <Tabs.Screen
-        name="message"
-        options={{
-          tabBarIcon: ({ focused }) =>
-            focused ? <MessageFilled /> : <MessageOutline />,
-        }}
-      />
-
-      <Tabs.Screen
-        name="notification"
-        options={{
-          tabBarIcon: ({ focused }) =>
-            focused ? <NotificationFilled /> : <NotificationOutline />,
-        }}
-      />
-
-      <Tabs.Screen
-        name="profile"
-        options={{
-          tabBarIcon: ({ focused }) =>
-            focused ? <ProfileFilled /> : <ProfileOutline />,
-        }}
-      />
-    </Tabs>
+      >
+        <Tabs.Screen name="home" />
+        <Tabs.Screen name="message" />
+        <Tabs.Screen name="notification" />
+        <Tabs.Screen name="profile" />
+      </Tabs>
+      <TabBar />
+    </View>
   );
 }

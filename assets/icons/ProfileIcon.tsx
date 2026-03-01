@@ -4,15 +4,11 @@ export function ProfileOutline({ size = 24, color = "#888" }) {
   return (
     <Svg width={size} height={size} viewBox="0 0 24 24" fill="none">
       <Path
-        d="M12 12C14.7614 12 17 9.76142 17 7C17 4.23858 14.7614 2 12 2C9.23858 2 7 4.23858 7 7C7 9.76142 9.23858 12 12 12Z"
+        d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z"
         stroke={color}
-        strokeWidth="1.5"
-      />
-      <Path
-        d="M4 22C4 18.6863 7.58172 16 12 16C16.4183 16 20 18.6863 20 22"
-        stroke={color}
-        strokeWidth="1.5"
+        strokeWidth={1.5}
         strokeLinecap="round"
+        strokeLinejoin="round"
       />
     </Svg>
   );
@@ -20,17 +16,12 @@ export function ProfileOutline({ size = 24, color = "#888" }) {
 
 export function ProfileFilled({ size = 24, color = "#1A1A1A" }) {
   return (
-    <Svg width={size} height={size} viewBox="0 0 24 24" fill="none">
+    <Svg width={size} height={size} viewBox="0 0 24 24">
       <Path
-        d="M12 12C14.7614 12 17 9.76142 17 7C17 4.23858 14.7614 2 12 2C9.23858 2 7 4.23858 7 7C7 9.76142 9.23858 12 12 12Z"
+        fillRule="evenodd"
+        clipRule="evenodd"
+        d="M7.5 6a4.5 4.5 0 1 1 9 0 4.5 4.5 0 0 1-9 0ZM3.751 20.105a8.25 8.25 0 0 1 16.498 0 .75.75 0 0 1-.437.695A18.683 18.683 0 0 1 12 22.5c-2.786 0-5.433-.608-7.812-1.7a.75.75 0 0 1-.437-.695Z"
         fill={color}
-      />
-      {/* Arc path must use stroke — fill on an open path renders nothing */}
-      <Path
-        d="M4 22C4 18.6863 7.58172 16 12 16C16.4183 16 20 18.6863 20 22"
-        stroke={color}
-        strokeWidth="2.5"
-        strokeLinecap="round"
       />
     </Svg>
   );

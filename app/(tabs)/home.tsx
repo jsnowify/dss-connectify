@@ -1,25 +1,26 @@
-import { StyleSheet, Text, useColorScheme, View } from "react-native";
+import { PostList } from "@/src/components/common/PostList";
+import { usePosts } from "@/src/context/PostContext";
+import { StyleSheet, useColorScheme, View } from "react-native";
 
 const Home = () => {
-  const scheme = useColorScheme();
-
-  const styles = StyleSheet.create({
-    container: {
-      flex: 1,
-      justifyContent: "center",
-      alignItems: "center",
-      backgroundColor: scheme === "dark" ? "#1A1A1A" : "#FAFAFA",
-    },
-    text: {
-      color: scheme === "dark" ? "#FAFAFA" : "#1A1A1A",
-    },
-  });
+  const isDark = useColorScheme() === "dark";
+  const styles = getStyles(isDark);
+  const { posts } = usePosts();
 
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>Home Screen</Text>
+      <PostList posts={posts} />
     </View>
   );
 };
+
+const getStyles = (isDark: boolean) =>
+  StyleSheet.create({
+    container: {
+      flex: 1,
+      backgroundColor: isDark ? "#1A1A1A" : "#FAFAFA",
+      paddingTop: 12,
+    },
+  });
 
 export default Home;

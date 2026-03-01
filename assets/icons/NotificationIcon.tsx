@@ -1,43 +1,26 @@
-import Svg, { ClipPath, Defs, G, Path, Rect } from "react-native-svg";
+import Svg, { Path } from "react-native-svg";
 
 export function NotificationOutline({ size = 24, color = "#888" }) {
   return (
-    <Svg width={size} height={size} viewBox="0 0 14 14" fill="none">
-      <G clipPath="url(#clip0)">
-        <Path
-          fillRule="evenodd"
-          clipRule="evenodd"
-          d="M4.0238 1.08512C5.00433 1.15617 6.02604 1.63415 7.00408 2.60152C7.98187 1.63442 9.00268 1.15735 9.9823 1.08788C11.0879 1.00947 12.0653 1.45632 12.7725 2.16133C14.1628 3.54747 14.5994 6.05569 12.8742 7.78093C12.8684 7.78675 12.8624 7.79243 12.8563 7.79795L7.33974 12.7949C7.14923 12.9674 6.85892 12.9674 6.66841 12.7949L1.15183 7.79795C1.14573 7.79243 1.13977 7.78675 1.13395 7.78093C-0.60028 6.0467 -0.166008 3.53819 1.22889 2.15313C1.93778 1.44923 2.91717 1.00494 4.0238 1.08512Z"
-          stroke={color}
-          strokeWidth={1}
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-      </G>
-      <Defs>
-        <ClipPath id="clip0">
-          <Rect width="14" height="14" fill="white" />
-        </ClipPath>
-      </Defs>
+    <Svg width={size} height={size} viewBox="0 0 24 24" fill="none">
+      <Path
+        d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z"
+        stroke={color}
+        strokeWidth={1.5}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
     </Svg>
   );
 }
+
 export function NotificationFilled({ size = 24, color = "#1A1A1A" }) {
   return (
-    <Svg width={size} height={size} viewBox="0 0 14 14" fill="none">
-      <G clipPath="url(#clip0)">
-        <Path
-          fillRule="evenodd"
-          clipRule="evenodd"
-          d="M4.0238 1.08512C5.00433 1.15617 6.02604 1.63415 7.00408 2.60152C7.98187 1.63442 9.00268 1.15735 9.9823 1.08788C11.0879 1.00947 12.0653 1.45632 12.7725 2.16133C14.1628 3.54747 14.5994 6.05569 12.8742 7.78093C12.8684 7.78675 12.8624 7.79243 12.8563 7.79795L7.33974 12.7949C7.14923 12.9674 6.85892 12.9674 6.66841 12.7949L1.15183 7.79795C1.14573 7.79243 1.13977 7.78675 1.13395 7.78093C-0.60028 6.0467 -0.166008 3.53819 1.22889 2.15313C1.93778 1.44923 2.91717 1.00494 4.0238 1.08512Z"
-          fill={color}
-        />
-      </G>
-      <Defs>
-        <ClipPath id="clip0">
-          <Rect width="14" height="14" fill="white" />
-        </ClipPath>
-      </Defs>
+    <Svg width={size} height={size} viewBox="0 0 24 24">
+      <Path
+        d="m11.645 20.91-.007-.003-.022-.012a15.247 15.247 0 0 1-.383-.218 25.18 25.18 0 0 1-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0 1 12 5.052 5.5 5.5 0 0 1 16.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 0 1-4.244 3.17 15.247 15.247 0 0 1-.383.219l-.022.012-.007.004-.003.001a.752.752 0 0 1-.704 0l-.003-.001Z"
+        fill={color}
+      />
     </Svg>
   );
 }
