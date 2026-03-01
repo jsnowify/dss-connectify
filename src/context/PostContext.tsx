@@ -2,7 +2,6 @@ import { posts as initialPosts } from "@/src/data/posts";
 import { Post } from "@/src/types/post";
 import { createContext, useContext, useState } from "react";
 
-// require must be static — never inside a function
 const defaultAvatar = require("../../assets/images/avatar.jpg");
 
 type PostContextType = {

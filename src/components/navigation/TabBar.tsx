@@ -113,9 +113,6 @@ const getStyles = (isDark: boolean) =>
       flexDirection: "row",
       alignItems: "center",
       backgroundColor: isDark ? "#1A1A1A" : "#FAFAFA",
-      // remove these two lines
-      // borderTopWidth: 1,
-      // borderTopColor: isDark ? "#2A2A2A" : "#EFEFEF",
     },
     tab: {
       flex: 1,
@@ -126,7 +123,7 @@ const getStyles = (isDark: boolean) =>
     composeBtn: {
       width: 45,
       height: 40,
-      borderRadius: 8, // was 10, lower = more square
+      borderRadius: 8,
       backgroundColor: isDark ? "#FAFAFA" : "#1A1A1A",
       justifyContent: "center",
       alignItems: "center",
