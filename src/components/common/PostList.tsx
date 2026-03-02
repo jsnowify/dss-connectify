@@ -4,6 +4,8 @@ import { FlatList } from "react-native";
 import PostCard from "../post/PostCard";
 import { PostComposer } from "../post/PostComposer";
 
+const TAB_BAR_HEIGHT = 70;
+
 type Props = {
   posts: Post[];
 };
@@ -20,6 +22,9 @@ export const PostList = ({ posts }: Props) => {
       showsVerticalScrollIndicator={false}
       onScroll={handleScroll}
       scrollEventThrottle={16}
+      contentContainerStyle={{
+        paddingBottom: TAB_BAR_HEIGHT,
+      }}
     />
   );
 };

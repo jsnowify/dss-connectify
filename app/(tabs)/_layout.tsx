@@ -12,11 +12,12 @@ export default function TabsLayout() {
           tabBarStyle: { display: "none" },
           headerStyle: { backgroundColor: isDark ? "#1A1A1A" : "#FAFAFA" },
           headerTintColor: isDark ? "#FAFAFA" : "#1A1A1A",
+          headerShadowVisible: false,
         }}
       >
-        <Tabs.Screen name="home" />
-        <Tabs.Screen name="message" />
-        <Tabs.Screen name="notification" />
+        <Tabs.Screen name="home" options={{ headerShown: false }} />
+        <Tabs.Screen name="message" options={{ headerShown: false }} />
+        <Tabs.Screen name="notification" options={{ headerShown: false }} />
         <Tabs.Screen name="profile" />
       </Tabs>
       <TabBar />

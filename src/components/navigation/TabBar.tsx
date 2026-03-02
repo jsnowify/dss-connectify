@@ -46,6 +46,13 @@ export const TabBar = () => {
   const pathname = usePathname();
   const { tabBarTranslateY } = useTabBar();
 
+  const isActive = (tabName: string) => {
+    if (pathname === "/" || pathname === "/(tabs)") {
+      return tabName === "home";
+    }
+    return pathname.includes(tabName);
+  };
+
   return (
     <Animated.View
       style={[
@@ -55,15 +62,15 @@ export const TabBar = () => {
     >
       {/* First two tabs */}
       {TABS.slice(0, 2).map((tab) => {
-        const isActive = pathname.includes(tab.name);
-        const iconColor = isActive ? (isDark ? "#FAFAFA" : "#1A1A1A") : "#888";
+        const active = isActive(tab.name);
+        const iconColor = active ? (isDark ? "#FAFAFA" : "#1A1A1A") : "#888";
         return (
           <Pressable
             key={tab.name}
             style={styles.tab}
             onPress={() => router.push(tab.route as any)}
           >
-            {isActive ? (
+            {active ? (
               <tab.IconFilled size={28} color={iconColor} />
             ) : (
               <tab.Icon size={28} color={iconColor} />
@@ -82,15 +89,15 @@ export const TabBar = () => {
 
       {/* Last two tabs */}
       {TABS.slice(2).map((tab) => {
-        const isActive = pathname.includes(tab.name);
-        const iconColor = isActive ? (isDark ? "#FAFAFA" : "#1A1A1A") : "#888";
+        const active = isActive(tab.name);
+        const iconColor = active ? (isDark ? "#FAFAFA" : "#1A1A1A") : "#888";
         return (
           <Pressable
             key={tab.name}
             style={styles.tab}
             onPress={() => router.push(tab.route as any)}
           >
-            {isActive ? (
+            {active ? (
               <tab.IconFilled size={28} color={iconColor} />
             ) : (
               <tab.Icon size={28} color={iconColor} />

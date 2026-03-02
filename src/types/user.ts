@@ -1,3 +1,5 @@
+import { BadgeType } from "./badge";
+
 export type User = {
   id: string;
   name: string;
@@ -6,4 +8,5 @@ export type User = {
   bio?: string;
   followers: number;
   following: number;
+  badges?: BadgeType[];
 };

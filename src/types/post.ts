@@ -1,3 +1,5 @@
+import { BadgeType } from "./badge";
+
 export type Post = {
   id: string;
   name: string;
@@ -7,4 +9,5 @@ export type Post = {
   time: string;
   likes: number;
   comments: number;
+  badges?: BadgeType[];
 };

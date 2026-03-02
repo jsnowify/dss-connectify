@@ -8,7 +8,7 @@ type TabBarContextType = {
 
 const TabBarContext = createContext<TabBarContextType | null>(null);
 
-const TAB_BAR_HEIGHT = 75;
+const TAB_BAR_HEIGHT = 70;
 const SCROLL_THRESHOLD = 10;
 
 export const TabBarProvider = ({ children }: { children: React.ReactNode }) => {
@@ -22,7 +22,6 @@ export const TabBarProvider = ({ children }: { children: React.ReactNode }) => {
     const diff = currentScrollY - lastScrollY.current;
     lastScrollY.current = currentScrollY;
 
-    // don't trigger at the very top
     if (currentScrollY <= 0) {
       accumulatedScroll.current = 0;
       Animated.timing(tabBarTranslateY, {
@@ -36,7 +35,6 @@ export const TabBarProvider = ({ children }: { children: React.ReactNode }) => {
 
     accumulatedScroll.current += diff;
 
-    // scrolling down — accumulate until threshold then slide out
     if (accumulatedScroll.current > SCROLL_THRESHOLD && !isHidden.current) {
       isHidden.current = true;
       accumulatedScroll.current = 0;
@@ -47,7 +45,6 @@ export const TabBarProvider = ({ children }: { children: React.ReactNode }) => {
       }).start();
     }
 
-    // scrolling up — accumulate until threshold then slide in
     if (accumulatedScroll.current < -SCROLL_THRESHOLD && isHidden.current) {
       isHidden.current = false;
       accumulatedScroll.current = 0;

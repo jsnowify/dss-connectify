@@ -1,4 +1,5 @@
 import { PostList } from "@/src/components/common/PostList";
+import { HomeHeader } from "@/src/components/navigation/HomeHeader";
 import { usePosts } from "@/src/context/PostContext";
 import { StyleSheet, useColorScheme, View } from "react-native";
 
@@ -9,6 +10,7 @@ const Home = () => {
 
   return (
     <View style={styles.container}>
+      <HomeHeader />
       <PostList posts={posts} />
     </View>
   );
@@ -19,7 +21,6 @@ const getStyles = (isDark: boolean) =>
     container: {
       flex: 1,
       backgroundColor: isDark ? "#1A1A1A" : "#FAFAFA",
-      paddingTop: 12,
     },
   });
 

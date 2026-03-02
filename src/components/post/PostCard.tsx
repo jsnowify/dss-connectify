@@ -1,5 +1,6 @@
 import { MessageOutline } from "@/assets/icons/MessageIcon";
 import { NotificationOutline } from "@/assets/icons/NotificationIcon";
+import { UsernameRow } from "@/src/components/common/UsernameRow";
 import { Post } from "@/src/types/post";
 import {
   Image,
@@ -23,10 +24,11 @@ const PostCard = ({ post }: Props) => {
       <View style={styles.postHeader}>
         <Image source={post.avatar} style={styles.avatar} />
         <View style={styles.postBody}>
-          <View style={styles.postMeta}>
-            <Text style={styles.username}>{post.username}</Text>
-            <Text style={styles.time}>{post.time}</Text>
-          </View>
+          <UsernameRow
+            username={post.username}
+            time={post.time}
+            badges={post.badges}
+          />
           <Text style={styles.postText}>{post.content}</Text>
           <View style={styles.postActions}>
             <Pressable style={styles.actionBtn}>
@@ -68,20 +70,6 @@ const getStyles = (isDark: boolean) =>
     postBody: {
       flex: 1,
       gap: 4,
-    },
-    postMeta: {
-      flexDirection: "row",
-      alignItems: "center",
-      gap: 6,
-    },
-    username: {
-      color: isDark ? "#FAFAFA" : "#1A1A1A",
-      fontWeight: "600",
-      fontSize: 14,
-    },
-    time: {
-      color: "#888",
-      fontSize: 13,
     },
     postText: {
       color: isDark ? "#FAFAFA" : "#1A1A1A",
