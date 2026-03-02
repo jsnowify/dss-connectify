@@ -13,30 +13,29 @@ import { Animated, Pressable, StyleSheet, useColorScheme } from "react-native";
 const TABS = [
   {
     name: "home",
-    route: "/(tabs)/home",
+    route: "/(drawer)/(tabs)/home", // <-- Updated path
     Icon: HomeOutline,
     IconFilled: HomeFilled,
   },
   {
     name: "message",
-    route: "/(tabs)/message",
+    route: "/(drawer)/(tabs)/message", // <-- Updated path
     Icon: MessageOutline,
     IconFilled: MessageFilled,
   },
   {
     name: "notification",
-    route: "/(tabs)/notification",
+    route: "/(drawer)/(tabs)/notification", // <-- Updated path
     Icon: NotificationOutline,
     IconFilled: NotificationFilled,
   },
   {
     name: "profile",
-    route: "/(tabs)/profile",
+    route: "/(drawer)/(tabs)/profile", // <-- Updated path
     Icon: ProfileOutline,
     IconFilled: ProfileFilled,
   },
 ];
-
 const TAB_BAR_HEIGHT = 70;
 
 export const TabBar = () => {

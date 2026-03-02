@@ -1,3 +1,5 @@
+import { DrawerActions } from "@react-navigation/native";
+import { useNavigation } from "expo-router";
 import { Pressable, StyleSheet, useColorScheme, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import Svg, { Path } from "react-native-svg";
@@ -40,12 +42,16 @@ const SearchIcon = ({ color }: { color: string }) => (
 export const HomeHeader = () => {
   const isDark = useColorScheme() === "dark";
   const insets = useSafeAreaInsets();
+  const navigation = useNavigation();
   const styles = getStyles(isDark, insets.top);
   const iconColor = isDark ? "#FAFAFA" : "#1A1A1A";
 
   return (
     <View style={styles.container}>
-      <Pressable style={styles.iconBtn}>
+      <Pressable
+        style={styles.iconBtn}
+        onPress={() => navigation.dispatch(DrawerActions.openDrawer())}
+      >
         <BurgerIcon color={iconColor} />
       </Pressable>
 

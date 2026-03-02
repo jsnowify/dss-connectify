@@ -13,7 +13,7 @@ import {
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import Svg, { Path } from "react-native-svg";
 
-const defaultAvatar = require("../../assets/images/avatar.jpg");
+const defaultAvatar = require("../../../assets/images/avatar.jpg");
 
 const SettingsIcon = ({ color }: { color: string }) => (
   <Svg width={22} height={22} viewBox="0 0 24 24" fill="none">

@@ -309,10 +309,8 @@ const Notification = () => {
               </View>
 
               <View style={styles.content}>
-                <View style={styles.textRow}>
-                  <Text style={styles.username}>{item.username} </Text>
-                  <Text style={styles.message}>{item.message}</Text>
-                </View>
+                <Text style={styles.username}>{item.username}</Text>
+                <Text style={styles.message}>{item.message}</Text>
                 {item.postPreview && (
                   <Text style={styles.postPreview} numberOfLines={1}>
                     {item.postPreview}
@@ -435,11 +433,7 @@ const getStyles = (isDark: boolean, topInset: number) =>
     },
     content: {
       flex: 1,
-      gap: 2,
-    },
-    textRow: {
-      flexDirection: "row",
-      flexWrap: "wrap",
+      gap: 1,
     },
     username: {
       color: isDark ? "#FAFAFA" : "#1A1A1A",
@@ -448,7 +442,7 @@ const getStyles = (isDark: boolean, topInset: number) =>
     },
     message: {
       color: isDark ? "#CCCCCC" : "#444444",
-      fontSize: 14,
+      fontSize: 13,
     },
     postPreview: {
       color: "#888",

@@ -15,7 +15,9 @@ export default function RootLayout() {
             headerTintColor: isDark ? "#FAFAFA" : "#1A1A1A",
           }}
         >
-          <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+          {/* This points to the Drawer group safely */}
+          <Stack.Screen name="(drawer)" options={{ headerShown: false }} />
+
           <Stack.Screen
             name="compose"
             options={{
