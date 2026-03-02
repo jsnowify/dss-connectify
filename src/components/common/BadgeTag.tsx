@@ -1,21 +1,18 @@
 import { BADGES, BadgeType } from "@/src/types/badge";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, useColorScheme, View } from "react-native";
 
 type Props = {
   type: BadgeType;
 };
 
 export const BadgeTag = ({ type }: Props) => {
+  const isDark = useColorScheme() === "dark";
   const badge = BADGES[type];
+  const color = isDark ? badge.darkColor : badge.lightColor;
 
   return (
-    <View
-      style={[
-        styles.container,
-        { backgroundColor: badge.color + "22" }, // 22 = ~13% opacity
-      ]}
-    >
-      <Text style={[styles.label, { color: badge.color }]}>{badge.label}</Text>
+    <View style={[styles.container, { backgroundColor: color + "22" }]}>
+      <Text style={[styles.label, { color }]}>{badge.label}</Text>
     </View>
   );
 };

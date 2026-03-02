@@ -18,7 +18,7 @@ export default function TabsLayout() {
         <Tabs.Screen name="home" options={{ headerShown: false }} />
         <Tabs.Screen name="message" options={{ headerShown: false }} />
         <Tabs.Screen name="notification" options={{ headerShown: false }} />
-        <Tabs.Screen name="profile" />
+        <Tabs.Screen name="profile" options={{ headerShown: false }} />
       </Tabs>
       <TabBar />
     </View>

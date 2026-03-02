@@ -3,21 +3,21 @@ export type BadgeType = "student" | "visitor";
 export type Badge = {
   type: BadgeType;
   label: string;
-  color: string;
-  textColor: string;
+  lightColor: string; // used in light mode
+  darkColor: string; // used in dark mode
 };
 
 export const BADGES: Record<BadgeType, Badge> = {
   student: {
     type: "student",
     label: "Student",
-    color: "#1E3A5F",
-    textColor: "#1E3A5F",
+    lightColor: "#1E3A5F", // deep navy
+    darkColor: "#5B9BD5", // lighter steel blue — visible on dark bg
   },
   visitor: {
     type: "visitor",
     label: "Visitor",
-    color: "#800020",
-    textColor: "#800020",
+    lightColor: "#800020", // deep maroon
+    darkColor: "#C06080", // muted rose — visible on dark bg
   },
 };
